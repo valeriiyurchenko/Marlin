@@ -31,7 +31,6 @@ GCodeQueue queue;
 
 #include "../lcd/marlinui.h"
 #include "../sd/cardreader.h"
-#include "../module/motion.h"
 #include "../module/planner.h"
 #include "../module/temperature.h"
 #include "../MarlinCore.h"
@@ -158,6 +157,8 @@ bool GCodeQueue::_enqueue(const char* cmd, bool say_ok/*=false*/
   );
   return true;
 }
+
+#define ISEOL(C) ((C) == '\n' || (C) == '\r')
 
 /**
  * Enqueue with Serial Echo
