@@ -30,9 +30,16 @@
 // BLTouch commands are sent as servo angles
 typedef unsigned char BLTCommand;
 
-#define STOW_ALARM            true
-#define BLTOUCH_DEPLOY          10
-#define BLTOUCH_STOW            90
+#if ENABLED(CREALITY_TOUCH)
+  #define STOW_ALARM         false
+  #define BLTOUCH_DEPLOY       170
+  #define BLTOUCH_STOW          20
+#else
+  #define STOW_ALARM          true
+  #define BLTOUCH_DEPLOY        10
+  #define BLTOUCH_STOW          90
+#endif
+
 #define BLTOUCH_SW_MODE         60
 #define BLTOUCH_SELFTEST       120
 #define BLTOUCH_MODE_STORE     130

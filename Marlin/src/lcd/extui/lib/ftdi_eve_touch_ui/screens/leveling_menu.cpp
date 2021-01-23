@@ -118,4 +118,4 @@ bool LevelingMenu::onTouchEnd(uint8_t tag) {
   return true;
 }
 
-#endif // TOUCH_UI_FTDI_EVE && HAS_LEVELING
+#endif // BOTH(TOUCH_UI_FTDI_EVE,HAS_LEVELING)
